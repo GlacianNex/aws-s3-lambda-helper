@@ -12,7 +12,7 @@ It is specifically designed to be used with AWS Lambdas, however can be used in 
 
 ## Usage
 
-###Constructor:
+### Constructor:
 
 ``` js
 const S3 = require('aws-s3-lambda-helper');
@@ -23,7 +23,7 @@ const s3 = new S3(bucket, profile, awsRegion);
 * profile - profile that will be used to get your AWS credentials. If none provided it will use `AWS.EnvironmentCredentials` with 'AWS' prefix (default in lambda environments) to get credentials (optional)
 * awsRegion - region in which your ElasticSearch is located, default: `process.env.AWS_DEFAULT_REGION`. (optional)
 
-###Methods:
+### Methods:
 Library supports following operations.
 
 #### delete
