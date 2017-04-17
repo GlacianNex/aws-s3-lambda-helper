@@ -5,8 +5,13 @@ const Q = require('q');
 
 class S3 {
   constructor(bucket, profile, awsRegion) {
-    const credentials = profile ? new AWS.SharedIniFileCredentials({ profile })
-            : new AWS.EnvironmentCredentials('AWS');
+    let credentials = new AWS.EnvironmentCredentials('AWS');
+    if (profile) {
+      credentials = new AWS.SharedIniFileCredentials({ profile });
+    } else if (process.env.AWS_PROFILE) {
+      credentials = new AWS.SharedIniFileCredentials({ profile: process.env.AWS_PROFILE });
+    }
+
     const region = (awsRegion || process.env.AWS_DEFAULT_REGION);
 
     this.serviceBucket = bucket;
