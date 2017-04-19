@@ -1,6 +1,6 @@
 {
   "name": "aws-s3-lambda-helper",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrapper around AWS S3 for ease of use in Lambda environment.",
   "main": "index.js",
   "scripts": {

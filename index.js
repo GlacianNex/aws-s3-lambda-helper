@@ -4,21 +4,21 @@ const AWS = require('aws-sdk');
 const Q = require('q');
 
 class S3 {
-  constructor(bucket, profile, awsRegion) {
-    let credentials = new AWS.EnvironmentCredentials('AWS');
+  constructor(bucket, awsRegion, profile) {
+    const region = (awsRegion || process.env.AWS_DEFAULT_REGION);
+    const params = {
+      region,
+    };
+
     if (profile) {
-      credentials = new AWS.SharedIniFileCredentials({ profile });
-    } else if (process.env.AWS_PROFILE) {
-      credentials = new AWS.SharedIniFileCredentials({ profile: process.env.AWS_PROFILE });
+      const SharedIniFileCredentials = AWS.SharedIniFileCredentials;
+      params.credentials = new SharedIniFileCredentials({
+        profile,
+      });
     }
 
-    const region = (awsRegion || process.env.AWS_DEFAULT_REGION);
-
     this.serviceBucket = bucket;
-    this.s3 = new AWS.S3({
-      region,
-      credentials,
-    });
+    this.s3 = new AWS.S3(params);
   }
 
   delete(key) {
