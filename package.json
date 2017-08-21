@@ -1,6 +1,6 @@
 {
   "name": "aws-s3-lambda-helper",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Wrapper around AWS S3 for ease of use in Lambda environment.",
   "main": "index.js",
   "scripts": {
@@ -11,24 +11,19 @@
     "url": "git+https://github.com/GlacianNex/aws-s3-lambda-helper.git"
   },
   "dependencies": {
-    "aws-sdk" : "*",
-    "q" : "*"
+    "aws-sdk": "*",
+    "q": "*"
   },
   "devDependencies": {
     "mocha": "*",
-    "chai" : "*",
+    "chai": "*",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^4.0.0",
     "eslint-plugin-react": "^6.10.3"
   },
-  "keywords": [
-    "s3",
-    "lambda",
-    "aws",
-    "helper"
-  ],
+  "keywords": ["s3", "lambda", "aws", "helper"],
   "author": "Igor Chernyy",
   "license": "MIT",
   "bugs": {

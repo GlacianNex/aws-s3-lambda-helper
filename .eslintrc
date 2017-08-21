@@ -1,7 +1,16 @@
 {
-  "extends": "airbnb", 
+  "extends": "airbnb",
+  "plugins": ["react"],
   "rules": {
-    "no-underscore-dangle" :"off",
-    "strict" : "off"
+    "no-unused-expressions": ["error", { "allowTernary": true }],
+    "no-underscore-dangle": "off",
+    "no-console": "off",
+    "no-confusing-arrow": "off",
+    "comma-dangle": ["error", { "objects": "never" }],
+    "object-curly-newline": ["error", { "multiline": true }],
+    "object-property-newline": ["error", { "allowMultiplePropertiesPerLine": true }],
+    "max-len": ["error", { "code": 120 }],
+    "arrow-parens": ["error", "as-needed"],
+    "no-extra-parens": ["error", "all", { "nestedBinaryExpressions": false }]
   }
 }
