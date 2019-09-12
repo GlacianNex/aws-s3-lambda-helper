@@ -48,12 +48,13 @@ class S3 {
     return deferred.promise;
   }
 
-  store(key, data) {
+  store(key, data, contentType) {
     const deferred = Q.defer();
     const param = {
       Bucket: this.serviceBucket,
       Key: key,
-      Body: data
+      Body: data,
+      ContentType: contentType
     };
 
     this.s3.putObject(param, err => {
